@@ -1,0 +1,137 @@
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 12-Aug-2012 14:11:59  PAGE    1
+
+************ OBJECT LISTING ************
+
+FILE NAME: D:\Anderain\fx-9860\DL2\dl2_key.c
+
+SCT OFFSET   CODE       C LABEL     INSTRUCTION OPERAND    COMMENT
+
+       dl2_key.c     1    #include "dl2_all.h"
+       dl2_key.c     2    
+       dl2_key.c     3    uint waitkey() {uint key ;GetKey(&key);return key;}
+P   00000000              _waitkey:                        ; function: waitkey
+                                                           ; frame size=8
+    00000000 4F22                   STS.L       PR,@-R15
+    00000002 7FFC                   ADD         #-4,R15
+    00000004 D30B                   MOV.L       L384+2,R3  ; _GetKey
+    00000006 430B                   JSR         @R3
+    00000008 64F3                   MOV         R15,R4
+    0000000A 60F2                   MOV.L       @R15,R0
+    0000000C 7F04                   ADD         #4,R15
+    0000000E 4F26                   LDS.L       @R15+,PR
+    00000010 000B                   RTS
+    00000012 0009                   NOP
+       dl2_key.c     4    void wait(uint key) {uint k;do{GetKey(&k);}while(key!=k);}
+    00000014              _wait:                           ; function: wait
+                                                           ; frame size=16
+    00000014 2FE6                   MOV.L       R14,@-R15
+    00000016 4F22                   STS.L       PR,@-R15
+    00000018 DE06                   MOV.L       L384+2,R14 ; _GetKey
+    0000001A 7FF8                   ADD         #-8,R15
+    0000001C 1F41                   MOV.L       R4,@(4,R15)
+    0000001E              L383:                             
+    0000001E 4E0B                   JSR         @R14
+    00000020 64F3                   MOV         R15,R4
+    00000022 63F2                   MOV.L       @R15,R3
+    00000024 52F1                   MOV.L       @(4,R15),R2
+    00000026 3230                   CMP/EQ      R3,R2
+    00000028 8BF9                   BF          L383
+    0000002A 7F08                   ADD         #8,R15
+    0000002C 4F26                   LDS.L       @R15+,PR
+    0000002E 000B                   RTS
+    00000030 6EF6                   MOV.L       @R15+,R14
+    00000032              L384:                             
+    00000032 0000                   .DATA.W     0
+    00000034 <00000000>             .DATA.L     _GetKey
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+SH SERIES C/C++ Compiler (Ver. 6.0C)                                                                 12-Aug-2012 14:11:59  PAGE    1
+
+
+******** STATISTICS INFORMATION ********
+
+
+********** ERROR INFORMATION ***********
+
+NUMBER OF ERRORS:           0
+NUMBER OF WARNINGS:         0
+
+
+
+
+******* SOURCE LINE INFORMATION ********
+
+COMPILED SOURCE LINE:        4
+
+
+
+******* SECTION SIZE INFORMATION *******
+
+PROGRAM  SECTION (P):                               00000038 Byte(s)
+CONSTANT SECTION (C):                               00000000 Byte(s)
+DATA     SECTION (D):                               00000000 Byte(s)
+BSS      SECTION (B):                               00000000 Byte(s)
+
+ TOTAL PROGRAM SIZE: 00000038 Byte(s)
+
+
+
+********** LABEL INFORMATION ***********
+
+NUMBER OF EXTERNAL REFERENCE SYMBOLS:            1
+NUMBER OF EXTERNAL DEFINITION SYMBOLS:           2
+NUMBER OF INTERNAL/EXTERNAL SYMBOLS:             5
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+*** COMMAND PARAMETER ***
+
+
+  -subcommand=C:\DOCUME~1\ADMINI~1\LOCALS~1\Temp\hmk22F.tmp 
+
